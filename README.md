@@ -1,7 +1,7 @@
 Project UAS Pemrograman Grafis
 
 Nama kelompok :
-- Oppo Anda Resta
+- Oppi Anda Resta
 - Callista I.A. Diaz
 - Ulfia Nur Ramadany
 
