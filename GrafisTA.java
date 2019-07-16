@@ -113,9 +113,8 @@ GLRenderer glr;
         gl.glMatrixMode(GL.GL_MODELVIEW);
         gl.glLoadIdentity();
     }
-    static double lebar=0.005;
-    static double tinggi =0.05;
-    static double akar=0.05;
+       static double geserpot=0;
+       static double geserpot1=0;
     
     public void display(GLAutoDrawable drawable) {
          
@@ -136,46 +135,22 @@ GLRenderer glr;
         gl.glRotated(50, 0, -1, 0);
         gl.glTranslated(0, 0, -3);
 
+        gl.glPushMatrix();
+        gl.glRotated(95, 0,-0.5, 0); 
+        gl.glRotated(57, 1, 0, 0); 
+        gl.glTranslated(0, geserpot, 0);
+        Objek.pot(gl);
+        gl.glTranslated(0,geserpot1, 0);
+        Objek.pot1(gl);
+        gl.glPopMatrix();
+
         gl.glTranslated( 0, 0, 1);
 
         gl.glPopMatrix();
-
-        Objek.biji(gl); // Pada fungsi yang sudah dibuat pada pembahasan sebelumnya
-        gl.glPopMatrix();
- 
-        gl.glPushMatrix();
- 
-        Objek.batang(gl); // Pada fungsi yang sudah dibuat pada pembahasan sebelumnya
-        gl.glPopMatrix();
-        gl.glRotated(90, 1, 0, 0);
-        gl.glTranslated(0, 4, -0.5);
- 
-        gl.glTranslatef(0.5f,1.0f,-1.0f);
-        gl.glPushMatrix();
-        gl.glTranslated(-0.75, -1.5, 1);
- 
-        gl.glRotated(45, 1, 0.5, 0);
-
- 
-        gl.glPopMatrix();
-        //Objek.cabang(gl);
-        gl.glTranslated(-1.25,-1,3);
-        gl.glTranslated(0.75, 0, 0);
-
-        gl.glPopMatrix();
-        Objek.akar(gl);
+        geserpot1=2.5;
+        geserpot=1.5;
  
         gl.glLoadIdentity(); 
-
- //Objek tabunglancip
-if (akar<=0.2){
-    akar+=0.001;}
-if(lebar<0.25){
-    lebar+=0.0001;
-}
-if(tinggi<=4){
-    tinggi+=0.001;
-}
     }
 
     public void displayChanged(GLAutoDrawable drawable, boolean modeChanged, boolean deviceChanged) {
@@ -212,4 +187,5 @@ if(tinggi<=4){
 
     public void mouseMoved(MouseEvent e) {
     }
+    private JButton Btn_belahpot;
  }
